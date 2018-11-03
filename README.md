@@ -1,7 +1,4 @@
-# airflow-rpm
-
-Build scripts for generating Airflow RPM files.
-Tested on CentOS 7
+# airflow
 
 ## Install Build Requirements
 ```
@@ -14,8 +11,8 @@ $> sudo pip install pip --upgrade
 
 ## Clone 
 ```
-$> git clone https://github.com/hurdad/airflow-rpm.git
-$> cd airflow-rpm
+$> git clone https://github.com/xiaomatech/airflow.git
+$> cd airflow
 ```
 
 ## Configure Version + Packages
