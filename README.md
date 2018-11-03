@@ -1,4 +1,7 @@
-# airflow
+# airflow-rpm
+
+Build scripts for generating Airflow RPM files.
+Tested on CentOS 7
 
 ## Install Build Requirements
 ```
@@ -11,8 +14,8 @@ $> sudo pip install pip --upgrade
 
 ## Clone 
 ```
-$> git clone https://github.com/xiaomatech/airflow.git
-$> cd airflow
+$> git clone https://github.com/hurdad/airflow-rpm.git
+$> cd airflow-rpm
 ```
 
 ## Configure Version + Packages
@@ -37,7 +40,7 @@ $> make
 
 ## Install RPM
 ```
-$> sudo yum install rpmbuild/RPMS/x86_64/airflow-1.7.1.3-1.el7.centos.x86_64.rpm
+$> sudo yum install rpmbuild/RPMS/x86_64/airflow-*.x86_64.rpm
 ```
 
 ## Airflow Init Server Configuration
@@ -83,4 +86,5 @@ $> sudo systemctl enable airflow-scheduler
 $> sudo systemctl enable airflow-webserver
 $> sudo systemctl enable airflow-worker
 ```
+
 
