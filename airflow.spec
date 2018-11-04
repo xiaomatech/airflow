@@ -88,5 +88,6 @@ fi
 /usr/lib/systemd/system/*
 /usr/bin/*
 /etc/logrotate.d/*
+/etc/airflow.cfg
 
 %changelog
