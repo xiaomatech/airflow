@@ -9,7 +9,7 @@ License:        ASL 2.0
 URL:            https://airflow.incubator.apache.org/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:	python-devel
-BuildRequires: 	mariadb-devel
+BuildRequires: 	mysql-devel
 BuildRequires:  libffi-devel 
 BuildRequires:  cyrus-sasl-devel
 BuildRequires:	gcc-c++
@@ -33,10 +33,13 @@ Airflow is a platform to programmatically author, schedule and monitor workflows
 %{__mkdir} -p %{buildroot}/run/airflow/
 %{__mkdir} -p %{buildroot}/etc/logrotate.d/
 
-pip install --target %{buildroot}/usr/share/airflow/lib airflow[%{PACKAGES}]
+export SLUGIFY_USES_TEXT_UNIDECODE=yes
+pip install --target %{buildroot}/usr/share/airflow/lib apache-airflow[%{PACKAGES}]
 
 %{__cp} -rp %{_topdir}/requirements.txt %{buildroot}/requirements.txt
 pip install --target %{buildroot}/usr/share/airflow/lib -r %{buildroot}/requirements.txt
+rm -rf %{buildroot}/requirements.txt
+
 %{__cp} -rp %{_topdir}/systemd/airflow.cfg %{buildroot}/etc/airflow.cfg
 
 %{__cp} -rp %{_topdir}/systemd/airflow %{buildroot}/etc/sysconfig/
