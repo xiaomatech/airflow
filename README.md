@@ -4,7 +4,7 @@
 ```
 $> sudo yum install epel-release
 $> sudo yum update
-$> sudo yum install rpm-build python2-pip python-devel mariadb-devel libffi-devel cyrus-sasl-devel gcc-c++
+$> sudo yum install rpm-build python2-pip python-devel mysql-devel libffi-devel cyrus-sasl-devel gcc-c++
 $> sudo pip install setuptools --upgrade
 $> sudo pip install pip --upgrade
 ```
